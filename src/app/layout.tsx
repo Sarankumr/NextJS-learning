@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import NavigationTabBar from "@/components/NavigationTab/NavigationTabBar";
+import { Provider } from "@/components/ui/provider"
+import { CustomAppFooterContect } from "@/components/Footer/CustomAppFooterContent";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,12 +27,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+  
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className={"grid grid-rows-[auto_1fr_auto] flex-1 w-full h-full"}>
+          <header className={"bg-[#fff] w-full"}>
+            <NavigationTabBar />
+          </header>
+          <main className={"flex-1 items-center sm:items-start mt-20 px-20  bg-gray-50"}>
+            <Provider>{children}</Provider>
+          </main>
+          <footer className={"flex gap-6 bg-black p-2 flex-wrap items-center justify-center"}>
+            <div>
+              <CustomAppFooterContect />
+              <p className={'text-center text-base text-[#fff]'}>Copyright © 2024
+                <b className="font-semibold mx-1"> iNotch. </b>All Rights Reserved.</p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );

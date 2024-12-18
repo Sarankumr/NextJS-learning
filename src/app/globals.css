@@ -19,3 +19,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes moveUp {
+  from {
+    transform: translateY(100%); /* Start off-screen at the bottom */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* End at the natural position */
+    opacity: 1;
+  }
+}
+
+.animate-move-up {
+  animation: moveUp 2s ease-out; /* Animation duration and easing */
+}
