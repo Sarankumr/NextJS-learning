@@ -6,7 +6,7 @@ import React from "react";
 
 
 
-export const Career = () => {
+const Careerpage = () => {
     const TEXT = [
         "We turn ideas into reality with technology.",
         "Our focus is on innovation, growth, and excellence.",
@@ -33,3 +33,5 @@ export const Career = () => {
         </div>
     )
 }  
+
+export default Careerpage;

@@ -10,10 +10,13 @@
 // }
 
 import Link from 'next/link'
-import { Contact } from './block/contact/page'
-import { RequestForService } from './block/career/block/requestForService/page'
-import { Dashboard } from './block/dashboard/page'
+import { Dashboard } from './pages/dashboard/page'
+
 
 export default function Page() {
-  return <Dashboard />
+  return (
+    <>
+      <Dashboard />
+    </>
+  )
 }

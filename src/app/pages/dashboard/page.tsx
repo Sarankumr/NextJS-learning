@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import { CustomAreaExpertise } from "./component/CustomAreaExpertise";
 import { CustomHoverZoomCard } from "./component/CustomHoverZoomCard";
 import { CustomClientCard } from "./component/CustomClientCard";
+import { CustomModal } from "@/components/CommonComponent/CustomModal/CustomModal";
 
 
 export const Dashboard = () => {
@@ -81,6 +82,43 @@ export const Dashboard = () => {
             descp: 'Firm believer in combined engineering we use the best in class tools and processes to ensure that what gets delivered to you is pixel perfect and is exactly what you envisioned'
         },
 
+    ]
+
+    const STRATEGIC_OBJECT = [
+        {
+            id: 1,
+            iconeSize: 50,
+            iconeColor: '',
+            iconeName: 'Manager',
+            title: 'Expand our leadership through differentiated services and products leveraging our engineering pedigree'
+        },
+        {
+            id: 2,
+            iconeSize: 35,
+            iconeName: 'Globe',
+            iconeColor: 'blue',
+            title: 'Be an employer of choice for professional services talent across chosen geographies'
+        },
+        {
+            id: 3,
+            iconeSize: 40,
+            iconeName: 'Chip',
+            title: 'Be the preferred digital and AI partner for Global 2000, equivalent and emerging enterprises in chosen markets'
+        },
+        {
+            id: 4,
+            iconeSize: 30,
+            iconeName: 'Env',
+            iconeColor: 'green',
+            title: 'Weave ESG (Environmental, Social and Governance) into our business strategy'
+        },
+        {
+            id: 5,
+            iconeSize: 30,
+            iconeName: 'ChartCandle',
+            iconeColor: 'orange',
+            title: 'Continue to deliver top quartile TSR (Total Shareholder Return) over the medium term.'
+        },
     ]
     return (
         <div style={{ flexDirection: 'row', flex: 1, marginBottom: 20 }}>
@@ -178,10 +216,32 @@ export const Dashboard = () => {
                         >
                             We look forward to supercharging our growth with optimism and confidence, ready to seize the many opportunities ahead. Our growth strategy for the emerging digital and AI future is built on five strategic objectives.”
                         </p>
-                        <div className={'flex gap-2 items-center'}>
-                            <h4 className={'text-[#5F1EBE] text-lg mt-1'}>Our five strategic object</h4>
-                            <ICONES.RightLongArrow color={'#5F1EBE'} size={20} />
-                        </div>
+                        <CustomModal
+                            modalSize={'xl'}
+                            btnContent={
+                                <div className={'flex gap-2 items-center cursor-pointer'}>
+                                    <h4 className={'text-[#5F1EBE] text-lg mt-1'}>Our five strategic object</h4>
+                                    <ICONES.RightLongArrow color={'#5F1EBE'} size={20} />
+                                </div>
+                            }
+                            children={
+                                <div className="w-full mt-4">
+                                    {STRATEGIC_OBJECT.map((item, index) => {
+                                        //@ts-ignore
+                                        const IconComponent = ICONES[item.iconeName];
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="p-3 bg-slate-100 rounded-sm mb-3 items-start flex gap-2"
+                                            >
+                                                <IconComponent size={item.iconeSize} color={item.iconeColor} />
+                                                <p className="text-black" style={{ fontSize: 18, marginTop: 3 }}>{item.title}</p>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            }
+                        />
                         <div className="mt-3">
                             <h2 className={'font-semibold text-3xl text-black'}>J Saran kumar</h2>
                             <p className={'font-light text-black text-lg'}>Software developer | <b>iNotch</b></p>

@@ -27,6 +27,12 @@ import { LuCloudCog } from "react-icons/lu";
 import { RiRobot2Line } from "react-icons/ri";
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { LiaGlobeAmericasSolid } from "react-icons/lia";
+import { IoHardwareChipOutline } from "react-icons/io5";
+import { FaEnvira } from "react-icons/fa6";
+import { LuChartCandlestick } from "react-icons/lu";
+import { FcManager } from "react-icons/fc";
 
 
 
@@ -64,8 +70,13 @@ export const ICONES = {
     Cloude: LuCloudCog,
     Engineer: SiGoogleearthengine,
     Quote: BiSolidQuoteAltLeft,
-    RightLongArrow: HiArrowNarrowRight
-
+    RightLongArrow: HiArrowNarrowRight,
+    Close: IoCloseCircleOutline,
+    Globe: LiaGlobeAmericasSolid,
+    Chip: IoHardwareChipOutline,
+    Env: FaEnvira,
+    ChartCandle: LuChartCandlestick,
+    Manager: FcManager
 }
 
 

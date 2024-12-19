@@ -8,7 +8,7 @@ import React from "react";
 
 
 
-export const Contact = () => {
+const ContactPage = () => {
 
     const router = useRouter();
     const TEXT = [
@@ -32,7 +32,7 @@ export const Contact = () => {
         { id: 4, title: 'Website feedback' },
     ]
     return (
-        <div className={'mt-3 flex-1 bg-white'}>
+        <div className={'mt-3 flex-1 '}>
             <div className={'flex items-center h-96'}>
                 <div className={"flex-1 justify-center items-center p-24"}>
                     <CustomAnimationText sequence={TEXT} />
@@ -89,3 +89,5 @@ export const Contact = () => {
         </div>
     )
 }  
+
+export default ContactPage
